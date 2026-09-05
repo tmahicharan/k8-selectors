@@ -4,6 +4,7 @@ metadata:
   name: pod-1
   labels:
    name: nginx
+   app: pod1
    project: roboshop
 spec:
   containers:
