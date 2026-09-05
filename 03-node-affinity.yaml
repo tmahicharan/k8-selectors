@@ -1,10 +1,13 @@
 apiVersion: v1
 kind: Pod
+
 metadata:
   name: node-affinity
+
 spec:
   affinity:
     nodeAffinity:
+
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
@@ -12,21 +15,24 @@ spec:
             operator: In
             values:
             - us-east-1f
+
       preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 100
-          preference:
+      - weight: 100
+        preference:
           matchExpressions:
           - key: project
             operator: In
-            values: 
+            values:
             - roboshop
-        - weight: 50
-          preference:
+
+      - weight: 50
+        preference:
           matchExpressions:
           - key: project
             operator: In
             values:
             - Amazon
+
   containers:
-    - name: nginx
-      image: nginx
+  - name: nginx
+    image: nginx
