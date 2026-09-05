@@ -12,7 +12,7 @@ spec:
           - key: topology.kubernetes.io/zone
             operator: NotIn
             values:
-            - us-east-1b
+            - us-east-1f
   containers:
   - name: nginx
     image: nginx
