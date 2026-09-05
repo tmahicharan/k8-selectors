@@ -16,8 +16,9 @@ kind: Pod
 metadata:
   name: pod-2
   labels:
-   name: nginx
-   project: roboshop
+    name: nginx
+    project: roboshop
+
 spec:
   affinity:
     podAffinity:
@@ -29,6 +30,7 @@ spec:
             values:
             - pod1
         topologyKey: kubernetes.io/hostname
+
   containers:
   - name: nginx
     image: nginx
