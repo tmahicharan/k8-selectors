@@ -20,13 +20,13 @@ spec:
         purpose: toleration-demo
         project: roboshop
     spec:
-    nodeSelector:
-      kubernetes.io/hostname: ip-192-168-19-222.ec2.internal
+      nodeSelector:
+        kubernetes.io/hostname: ip-192-168-19-222.ec2.internal
       containers:
       - name: nginx
         image: nginx
-    tolerations:
-    - key: "project"
-      operator: "Equal"
-      value: "roboshop"
-      effect: "NoSchedule"
+      tolerations:
+      - key: "project"
+        operator: "Equal"
+        value: "roboshop"
+        effect: "NoSchedule"
